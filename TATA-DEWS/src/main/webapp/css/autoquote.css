@@ -1,0 +1,26 @@
+.tableSize{
+	padding-left: 2%;
+	width: 80%;
+	hiegth: 40%;
+}
+.tableLeft{
+	width: 30%;
+	hiegth: 40%;
+}
+.fontColor {
+	color: blue;
+	
+}
+.tableFullSize{
+	width: 100%;
+}
+.labelCenter {
+	text-align: center;
+}
+.tableRight{
+	border: 1px solid silver;
+	border-spacing: 0;
+	padding-left: 2%;
+	width: 30%;
+	hiegth: 40%;
+}
