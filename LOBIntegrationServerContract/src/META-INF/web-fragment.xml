@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-fragment id="WebFragment_ID" version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd">
+
+ <servlet>
+ 	<description>Rest Service endpoint</description>
+ 	<servlet-name>lob-rest</servlet-name>
+ 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ 	<init-param>
+ 		<param-name>contextConfiguration</param-name>
+ 		<param-value>classpath:META-INF/lobServices.xml</param-value>
+ 	</init-param>
+ 	<load-on-startup>1</load-on-startup>
+ </servlet>
+ 
+ <servlet-mapping>
+ 	<servlet-name>lob-rest</servlet-name>
+	<url-pattern>/lob-services/*</url-pattern> 
+ </servlet-mapping>
+ </web-fragment>
