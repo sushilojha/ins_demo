@@ -51,7 +51,7 @@ public class ApplicationUrlUtils {
 
 	private String getApplicationUrlHostName(String defaultHost, HttpServletRequest request) {
 		WebApplicationContext ctx = getWebApplicationContext(request);
-		if (EnvironmentHelper.isWorkStation(ctx.getEnvironment())){
+		if (ctx ==null || EnvironmentHelper.isWorkStation(ctx.getEnvironment())){
 			return defaultHost;
 		}
 		else {
