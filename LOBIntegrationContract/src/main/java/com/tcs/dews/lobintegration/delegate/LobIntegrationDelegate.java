@@ -1,7 +1,16 @@
 package com.tcs.dews.lobintegration.delegate;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.http.converter.ByteArrayHttpMessageConverter;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.ResourceHttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.xml.SourceHttpMessageConverter;
+import org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import com.google.common.base.Preconditions;
@@ -31,11 +40,28 @@ public class LobIntegrationDelegate implements LobIntegration {
 	@Override
 	public BundleItemData retrieveProductDetails(ProductDetailsRequestTO productDetailsRequestTO) {
 		URI uri = buildURI(operationPath(RETRIEVE_PRODUCT_DETAILS),productDetailsRequestTO);
+		
+		System.err.println("URL::::::::::::::::" + restTemplate.getMessageConverters().size());
+		
+		restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+		
 		return restTemplate.getForObject(uri, BundleItemData.class);
+	}
+	
+	private List<HttpMessageConverter> buildHttpMessageConverter() {
+		List<HttpMessageConverter> messageConverters  = new ArrayList<HttpMessageConverter>();
+		messageConverters.add(new MappingJacksonHttpMessageConverter());
+		messageConverters.add(new ByteArrayHttpMessageConverter());
+		messageConverters.add(new StringHttpMessageConverter());
+		messageConverters.add(new ResourceHttpMessageConverter());
+		messageConverters.add(new SourceHttpMessageConverter());
+		messageConverters.add(new XmlAwareFormHttpMessageConverter());
+		
+		return messageConverters;
 	}
 
 	private String operationPath(String relativePath) {		
-		return applicationUrlUtils.getApplicationUrlPath(contextRoot + "/lob-services" + relativePath,defaultHost);
+		return applicationUrlUtils.getApplicationUrlPath(contextRoot + "/lob-services/" + relativePath,defaultHost);
 	}
 
 	public String getContextRoot() {
