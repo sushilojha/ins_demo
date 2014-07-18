@@ -21,10 +21,12 @@ public class LobIntegrationController extends IntegrationController {
 	@Autowired
 	private LobIntegrationServer lobIntegrationServer;
 	
-	@RequestMapping(value=RETRIEVE_PRODUCT_DETAILS, method=GET,
-			produces=APPLICATION_JSON_VALUE)	
+	@RequestMapping(value=RETRIEVE_PRODUCT_DETAILS, method=GET)
 	@ResponseBody
-	public BundleItemData retrieveProductDetails(@RequestBody ProductDetailsRequestTO productDetailsRequestTO){
+	public BundleItemData retrieveProductDetails(ProductDetailsRequestTO productDetailsRequestTO){
+		
+		System.err.println("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO::" + lobIntegrationServer.retrieveProductDetails(productDetailsRequestTO));
+		
 		return lobIntegrationServer.retrieveProductDetails(productDetailsRequestTO);
 	}
 
