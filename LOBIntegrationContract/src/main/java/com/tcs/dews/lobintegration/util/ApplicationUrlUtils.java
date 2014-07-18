@@ -23,7 +23,7 @@ public class ApplicationUrlUtils {
 	private String buildApplicationUrlPath(String path,
 			HttpServletRequest request, String defaultHost) {
 		List<KeyValue> parameters = new ArrayList<KeyValue>();
-		String prefix = "http://";
+		String prefix = "http://"; 
 		return addParameters(prefix + getApplicationUrlHostName(defaultHost,request)
 				+ "/" + path, parameters);
 	}
