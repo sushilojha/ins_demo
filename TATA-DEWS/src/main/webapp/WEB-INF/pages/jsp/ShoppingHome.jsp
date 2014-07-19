@@ -11,7 +11,7 @@
 <body>
 
 
-	<form:form id="productSelectForm" method="post">
+	<form:form id="productSelectForm" method="get">
 
 		<input type="hidden" id="ziphide">
 		<div class="panel panel-primary">
@@ -61,7 +61,7 @@
 										<div class="col-md-5">
 											<input type="button" class="btn btn-primary"
 												value="Get Quote" id="addAuto"
-												onclick="SelectedProduct('/DEWS/personalInfo')" />
+												onclick="SelectedProduct('/TATA-DEWS/dews/dewsLanding.htm')" />
 										</div>
 									</div>
 								</form>
