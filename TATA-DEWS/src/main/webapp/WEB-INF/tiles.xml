@@ -6,9 +6,8 @@
 	<definition name="base.definition" template="/WEB-INF/pages/layout/layout.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/WEB-INF/pages/includes/header.jsp" />
-		<put-attribute name="progressbar" value="" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="menu" value="/WEB-INF/pages/includes/menu.jsp" />
+		<put-attribute name="menu" value="" />
 		<put-attribute name="footer" value="/WEB-INF/pages/includes/footer.jsp" />
 	</definition>
 
@@ -27,11 +26,9 @@
 
 	<definition name="personalInformation" extends="base.definition">
 		<put-attribute name="title" value="Personal Information" />
-		<put-attribute name="progressbar"
-			value="/WEB-INF/pages/includes/personalInfoProgressbar.jsp" />
 		<put-attribute name="pageScript" value="js/personalInfo.js" />
-		<put-attribute name="body"
-			value="/WEB-INF/pages/jsp/personalInformation.jsp" />
+		<put-attribute name="body" 	value="/WEB-INF/pages/jsp/personalInformation.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/pages/jsp/SampleAgentWidget.jsp" />
 	</definition>
 
 	<definition name="autoquote" extends="base.definition">
