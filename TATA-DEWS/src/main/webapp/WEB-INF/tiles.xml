@@ -7,7 +7,7 @@
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/WEB-INF/pages/includes/header.jsp" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="menu" value="" />
+		<put-attribute name="menu" value="/WEB-INF/pages/jsp/bundleWidget.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/pages/includes/footer.jsp" />
 	</definition>
 
@@ -26,7 +26,7 @@
 
 	<definition name="personalInformation" extends="base.definition">
 		<put-attribute name="title" value="Personal Information" />
-		<put-attribute name="pageScript" value="js/personalInfo.js" />
+		<put-attribute name="pageScript" value="./js/bundlePanel.js"/>
 		<put-attribute name="body" 	value="/WEB-INF/pages/jsp/personalInformation.jsp" />
 		<put-attribute name="menu" value="/WEB-INF/pages/jsp/SampleAgentWidget.jsp" />
 	</definition>
